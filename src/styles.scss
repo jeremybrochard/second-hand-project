@@ -1,7 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use "./styles/custom-theme";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@include mat.core();
+
+html {
+  @include mat.all-component-themes(
+    custom-theme.$dark-theme
+  ); // <-- may add unnecessary CSS for the components we do not use
+  @include mat.system-level-colors(custom-theme.$dark-theme);
+  @include mat.system-level-typography(custom-theme.$dark-theme);
+
+  @media (prefers-color-scheme: light) {
+    @include mat.all-component-themes(custom-theme.$dark-theme);
+    @include mat.system-level-colors(custom-theme.$dark-theme);
+    @include mat.system-level-typography(custom-theme.$dark-theme);
+  }
+}
