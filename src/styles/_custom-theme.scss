@@ -143,6 +143,9 @@ $light-theme: mat.define-theme((
     use-system-variables: true,
   ),
   typography: (
+    brand-family: 'Ubuntu Sans',
+    plain-family: 'Ubuntu Sans',
+    bold-weight: 900,
     use-system-variables: true,
   ),
 ));
@@ -154,6 +157,9 @@ $dark-theme: mat.define-theme((
     use-system-variables: true,
   ),
   typography: (
+    brand-family: 'Ubuntu Sans',
+    plain-family: 'Ubuntu Sans',
+    bold-weight: 900,
     use-system-variables: true,
   ),
 ));
